@@ -1,0 +1,35 @@
+{% extends 'layout.tpl.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/html5-skin.css">
+<script src="/scripts/core.min.js"></script>
+<script src="/scripts/main_html5.min.js"></script>
+<script src="/scripts/bit_wrapper.min.js"></script>
+<script src="/scripts/osmf_flash.min.js"></script>
+<script src="/scripts/discovery_api.min.js"></script>
+<script src="/html5-skin.js"></script>
+<div class="myoo-player-container">
+  <div id="container" class="myoo-player"></div>
+  <script>
+  var serverData = {% autoescape false %}{{serverData}}{% endautoescape %};
+  OO.ready(() => {
+    OO.Player.create(
+      'container',
+      '{{embedCode}}',
+      {
+        pcode: '{{pcode}}',
+        playerBrandingId: '{{playerBrandingId}}',
+        debug: true,
+        skin: {
+          // config contains the configuration setting for player skin. Change this path to your local config when necessary.
+          config: '/skin.json'
+        }
+      }
+    );
+  });
+  </script>
+</div>
+{% if topLevel %}
+<template id="server-rendered">{% autoescape false %}{{topLevel}}{% endautoescape %}</template>
+{% endif %}
+{% endblock %}

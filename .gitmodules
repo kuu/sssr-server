@@ -1,0 +1,3 @@
+[submodule "custom-skin"]
+	path = custom-skin
+	url = git@github.com:kuu/sssr-skin.git
