@@ -69,7 +69,7 @@
     "lodash.values": "^4.3.0",
     "morgan": "^1.7.0",
     "node-fetch": "^1.6.3",
-    "ooyala-api": "^0.4.5",
+    "ooyala-api": "^0.9.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-scrollbar": "^0.4.2",
